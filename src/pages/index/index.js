@@ -6,7 +6,7 @@ import img1 from '../../assets/img/image1.jpg'
 import img2 from '../../assets/img/image2.jpg'
 import caseIcon from '../../assets/iconfont/case.png'
 import designerIcon from '../../assets/iconfont/designer.png'
-import hornIcon from '../../assets/iconfont/horn.png'
+/* import hornIcon from '../../assets/iconfont/horn.png' */
 import introductionIcon from '../../assets/iconfont/introduction.png'
 import phoneIcon from '../../assets/iconfont/phone.png'
 import './index.css'
@@ -33,12 +33,17 @@ export default class Index extends Component {
         <Swiper indicatorDots autoplay >
           {[img0,img1,img2].map(img=>(<SwiperItem key={img}><Image src={img} /></SwiperItem>))}
         </Swiper>
-        <List></List>
+        <View className='flex-wrp' style='flex-direction:row;'>
+          {list.map(item=>(<List key={item} icon={item.icon} title={item.title} ></List>))}
+        </View>
       </View>
     )
   }
 }
-const list={
-  icon:caseIcon
-}
+const list=[
+  {icon:introductionIcon,title: '公司简介'},
+  {icon:caseIcon,title:'公司案例'},
+  {icon:designerIcon,title:'设计师'},
+  {icon:phoneIcon,title:'联系我们'}
+]
 
