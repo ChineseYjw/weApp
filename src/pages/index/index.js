@@ -21,7 +21,11 @@ export default class Index extends Component {
     navigationBarTitleText: '圣豪州高端设计'
   }
 
-
+  skipTo({key}){
+    Taro.navigateTo({
+      url:`/pages/${key}/index`
+    })
+  }
 
   componentWillMount () { }
 
@@ -40,7 +44,7 @@ export default class Index extends Component {
           {[img0,img1,img2].map(img=>(<SwiperItem key={img}><Image src={img} /></SwiperItem>))}
         </Swiper>
         <View className='top'>
-          {list.map(item=>(<List key={item} icon={item.icon} title={item.title} ></List>))}
+          {list.map(item=>(<List onClick={this.skipTo.bind(this,item)} key={item.key} icon={item.icon} title={item.title} ></List>))}
         </View>
         <View className='foot'>
           {bottomList.map(item=>(<Bottom key={item} icon={item.icon} title={item.title} ></Bottom>))}
@@ -51,10 +55,10 @@ export default class Index extends Component {
   }
 }
 const list=[
-  {icon:introductionIcon,title: '公司简介'},
-  {icon:caseIcon,title:'公司案例'},
-  {icon:designerIcon,title:'设计师'},
-  {icon:phoneIcon,title:'联系我们'}
+  {icon:introductionIcon,title: '公司简介',key:'introduction'},
+  {icon:caseIcon,title:'公司案例',key: 'case'},
+  {icon:designerIcon,title:'设计师',key:'designer'},
+  {icon:phoneIcon,title:'联系我们',key:'phone'}
 ]
 const bottomList=[
   {icon:homeIcon,title:'首页'},

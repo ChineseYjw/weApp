@@ -1,8 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Image} from '@tarojs/components'
-import './List.css'
+import img from '../../assets/img/image2.jpg'
 
-export default class List extends Component {
+export default class index extends Component {
+
+  config = {
+    navigationBarTitleText: '圣豪州高端设计'
+  }
 
   componentWillMount () { }
 
@@ -15,11 +19,10 @@ export default class List extends Component {
   componentDidHide () { }
 
   render () {
-    const {icon,title,onClick}=this.props
     return (
-      <View className='list' onClick={onClick}>
-        <View className='iconList'><Image className='icon' src={icon} /></View>
-        <View><Text>{title}</Text></View>
+      <View className='index'>
+        <Image src={img} />
+        <View><Text> {'的嗡嗡嗡v'} </Text></View>
       </View>
     )
   }
