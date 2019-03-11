@@ -1,0 +1,19 @@
+html{
+  font-size: 20px;
+}
+.top{
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+}
+.list{
+  width: 10rem;
+}
+.foot{
+  display: flex;
+  flex-direction: row;
+  position:fixed;
+  bottom:0;
+}
+
+

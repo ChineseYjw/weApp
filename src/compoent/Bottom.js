@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Image} from '@tarojs/components'
-import './List.css'
+import './Bottom.css'
 
-export default class List extends Component {
+export default class Bottom extends Component {
 
   componentWillMount () { }
 
@@ -15,10 +15,10 @@ export default class List extends Component {
   componentDidHide () { }
 
   render () {
-    const {icon,title}=this.props
+    const  {icon,title}=this.props
     return (
-      <View className='list'>
-        <View className='iconList'><Image className='icon' src={icon} /></View>
+      <View className='bottom'>
+        <View className='bottomList'><Image className='icon' src={icon} /></View>
         <View><Text>{title}</Text></View>
       </View>
     )
