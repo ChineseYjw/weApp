@@ -15,9 +15,9 @@ export default class Bottom extends Component {
   componentDidHide () { }
 
   render () {
-    const  {icon,title}=this.props
+    const  {icon,title,onClick}=this.props
     return (
-      <View className='bottom'>
+      <View className='bottom' onClick={onClick}>
         <View className='bottomList'><Image className='icon' src={icon} /></View>
         <View><Text>{title}</Text></View>
       </View>
